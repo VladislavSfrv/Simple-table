@@ -1,0 +1,132 @@
+:root {
+    --color-primary: #3F5AA4;
+    --color-text: #374151;
+    --color-border: #e5e7eb;
+    --color-bg: #f9fafb;
+    --color-white: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.search input {
+    margin-left: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    width: 260px;
+}
+
+button {
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: #f3f4f6;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background: var(--color-border);
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.table th[data-field] {
+    cursor: pointer;
+    user-select: none;
+    color: var(--color-primary);
+}
+
+.table th[data-field]:hover {
+    background: #f3f4f6;
+}
+
+.table th[data-field][data-order="asc"]::after {
+    content: ' ↑';
+}
+
+.table th[data-field][data-order="desc"]::after {
+    content: ' ↓';
+}
+
+.filters input,
+.filters select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.filters .range {
+    width: 48%;
+}
+
+.filters .range + .range {
+    margin-left: 4%;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.rows-per-page {
+    margin-left: auto;
+    font-size: 0.9rem;
+}
+
+.rows-per-page select {
+    margin-left: 8px;
+    padding: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}

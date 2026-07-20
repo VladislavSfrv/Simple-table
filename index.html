@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Таблица</title>
+</head>
+<body>
+<main class="container">
+    <h1>Таблица продаж</h1>
+
+    <div class="toolbar">
+        <label class="search">
+            Поиск:
+            <input type="text" id="search" placeholder="Имя, продавец, дата...">
+        </label>
+        <button type="button" id="reset">Сбросить</button>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th data-field="date">Дата</th>
+            <th data-field="customer">Покупатель</th>
+            <th data-field="seller">Продавец</th>
+            <th data-field="total">Сумма</th>
+        </tr>
+        <tr class="filters">
+            <th><input type="text" id="filter-date" placeholder="дата"></th>
+            <th><input type="text" id="filter-customer" placeholder="покупатель"></th>
+            <th>
+                <select id="filter-seller">
+                    <option value="">Все</option>
+                </select>
+            </th>
+            <th>
+                <input type="number" id="filter-total-from" placeholder="от" class="range">
+                <input type="number" id="filter-total-to" placeholder="до" class="range">
+            </th>
+        </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+    <div class="pagination">
+        <button type="button" id="prev-page">←</button>
+        <span id="page-info">Страница 1</span>
+        <button type="button" id="next-page">→</button>
+
+        <label class="rows-per-page">
+            Строк на странице:
+            <select id="rows-per-page">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+            </select>
+        </label>
+    </div>
+</main>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
